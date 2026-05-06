@@ -16,7 +16,7 @@ jobs:
 
       - name: Install Betterleaks
         run: |
-          curl -sSfL "https://github.com/betterleaks/betterleaks/releases/download/v1.1.2/betterleaks_linux_amd64.tar.gz" \
+          curl -sSfL "https://github.com/betterleaks/betterleaks/releases/download/v1.1.2/betterleaks_1.1.2_linux_x64.tar.gz" \
             | tar -xz -C /usr/local/bin betterleaks
 
       - name: Run Betterleaks
