@@ -1,0 +1,11 @@
+title = "Betterleaks Config"
+
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Vendor and lock files"
+paths = [
+    '''vendor/''',
+    '''composer\.lock''',
+]

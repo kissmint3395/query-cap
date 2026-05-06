@@ -6,6 +6,22 @@ on:
   pull_request:
 
 jobs:
+  security:
+    name: Secret Scanning
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install Betterleaks
+        run: |
+          curl -sSfL "https://github.com/betterleaks/betterleaks/releases/download/v1.1.2/betterleaks_linux_amd64.tar.gz" \
+            | tar -xz -C /usr/local/bin betterleaks
+
+      - name: Run Betterleaks
+        run: betterleaks detect --no-banner -c .betterleaks.toml
+
   test:
     name: PHP ${{ matrix.php }}
     runs-on: ubuntu-latest
